@@ -18,6 +18,13 @@ class Jeu:
         pyxel.run(self.update(), self.draw())
 
 
+    def update(self):
+        """
+        Elle s'occupe de la modification de l'état du jeu à chaque frame
+        """
+        self.player_left.move()
+        self.player_left.move()
+
 
     def draw(self):
         """
@@ -26,12 +33,3 @@ class Jeu:
         pyxel.cls(0)
         self.player_left.draw()
         self.player_right.draw()
-        
-
-
-    def update(self):
-        """
-        Elle s'occupe de la modification de l'état du jeu à chaque frame
-        """
-        self.player_left.move()
-        self.player_left.move()
