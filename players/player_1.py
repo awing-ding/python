@@ -20,4 +20,4 @@ class Player1:
 
     def draw(self) :
         """la fonction qui dessine le vaisseau à l'écran"""
-        pyxel.rect(self.x, self.y, 2, 8, 1)
+        pyxel.rect(self.x, self.y, 2, 16, 1)

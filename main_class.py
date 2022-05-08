@@ -15,7 +15,7 @@ class Jeu:
         pyxel.init(256, 128, 'Pong', 30)
         self.player_left = player_1.Player1()
         self.player_right = player_2.Player2()
-        pyxel.run(self.update(), self.draw())
+        pyxel.run(self.update, self.draw)
 
 
     def update(self):
@@ -23,7 +23,7 @@ class Jeu:
         Elle s'occupe de la modification de l'état du jeu à chaque frame
         """
         self.player_left.move()
-        self.player_left.move()
+        self.player_right.move()
 
 
     def draw(self):
