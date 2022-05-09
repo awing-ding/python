@@ -8,7 +8,7 @@ class Jeu:
     """
 
 
-    def __init__(self) :
+    def __init__(self)  -> None:
         """
         Elle initialise pyxel et les objets nécessaires puis lance le jeu 
         """
@@ -18,7 +18,7 @@ class Jeu:
         pyxel.run(self.update, self.draw)
 
 
-    def update(self):
+    def update(self)  -> None:
         """
         Elle s'occupe de la modification de l'état du jeu à chaque frame
         """
@@ -26,7 +26,7 @@ class Jeu:
         self.player_right.move()
 
 
-    def draw(self):
+    def draw(self)  -> None:
         """
         Elle s'occupe de l'affichage
         """

@@ -5,12 +5,12 @@ class Player1:
     La classe qui définit la raquette gauche.
     """
 
-    def __init__(self):
+    def __init__(self)  -> None:
         self.x = 8
         self.y = pyxel.height / 2
 
 
-    def move(self) :
+    def move(self)  -> None:
         """la fonction qui capte le déplacement"""
         if pyxel.btn(pyxel.KEY_Z) and self.y > 0:
             self.y -= 1
@@ -18,6 +18,6 @@ class Player1:
             self.y += 1
 
 
-    def draw(self) :
+    def draw(self)  -> None:
         """la fonction qui dessine le vaisseau à l'écran"""
         pyxel.rect(self.x, self.y, 2, 16, 1)
