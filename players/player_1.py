@@ -14,7 +14,7 @@ class Player1:
         """la fonction qui capte le déplacement"""
         if pyxel.btn(pyxel.KEY_Z) and self.y > 0:
             self.y -= 1
-        if pyxel.btn(pyxel.KEY_S) and self.y < pyxel.height:
+        if pyxel.btn(pyxel.KEY_S) and self.y + 16 < pyxel.height:
             self.y += 1
 
 
