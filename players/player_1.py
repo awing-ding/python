@@ -15,11 +15,11 @@ class Player1:
     def move(self)  -> None:
         """la fonction qui capte le déplacement"""
         if pyxel.btn(pyxel.KEY_Z) and self.y > 0:
-            self.y -= 1
+            self.y -= 3
         if pyxel.btn(pyxel.KEY_S) and self.y + self.height < pyxel.height:
-            self.y += 1
+            self.y += 3
 
 
     def draw(self)  -> None:
         """la fonction qui dessine le vaisseau à l'écran"""
-        pyxel.rect(self.x, self.y, self.width, self.height, 1)
+        pyxel.rect(self.x, self.y, self.width, self.height, 7)
