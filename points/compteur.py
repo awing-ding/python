@@ -1,6 +1,3 @@
-from tkinter.messagebox import NO
-
-
 import pyxel
 
 class Compteur:
@@ -11,5 +8,6 @@ class Compteur:
 
     
     def draw(self) -> None:
+        """affiche le nombre de point à l'écran"""
         point = str(self.point_gauche) + "|" + str(self.point_droite)
         pyxel.text(pyxel.width / 3, 8, point, 7)
