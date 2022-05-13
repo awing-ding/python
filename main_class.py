@@ -2,6 +2,7 @@ import pyxel
 from players import player_1, player_2
 from ball import ball
 from points import compteur
+from background import background
 
 """par convention, le joueur de gauche est le joueur 1 est le joueur de droite le joueur 2 le joueur de gauche"""
 
@@ -16,7 +17,8 @@ class Jeu:
         """
         Elle initialise pyxel et les objets nécessaires puis lance le jeu 
         """
-        pyxel.init(1024, 512, 'Pong', 30)
+        pyxel.init(1024, 512, 'Pong', 10)
+        self.background = background.Background()
         self.player_left = player_1.Player1()
         self.player_right = player_2.Player2()
         self.ball = ball.Ball()
@@ -31,7 +33,8 @@ class Jeu:
         self.player_left.move()
         self.player_right.move()
         self.ball.move(self.player_left.x, self.player_left.y, self.player_left.width, self.player_right.x, self.player_right.y)
-        self.ball.point()
+        self.point()
+        self.ball.debug_activation()
 
 
     def draw(self)  -> None:
@@ -41,8 +44,10 @@ class Jeu:
         pyxel.cls(0)
         self.player_left.draw()
         self.player_right.draw()
-        self.ball.draw()
+        self.ball.draw(self.player_left.x, self.player_left.y, self.player_left.width, self.player_right.x, self.player_right.y)
         self.compteur.draw()
+        self.background.draw()
+        
     
     def point(self) -> None:
         """teste si un joueur gagne un point et l'attribue"""
