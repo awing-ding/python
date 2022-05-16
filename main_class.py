@@ -17,7 +17,7 @@ class Jeu:
         """
         Elle initialise pyxel et les objets nécessaires puis lance le jeu 
         """
-        pyxel.init(1024, 512, 'Pong', 10)
+        pyxel.init(1024, 512, 'Pong', 30)
         self.background = background.Background()
         self.player_left = player_1.Player1()
         self.player_right = player_2.Player2()
@@ -42,10 +42,10 @@ class Jeu:
         Elle s'occupe de l'affichage
         """
         pyxel.cls(0)
+        self.compteur.draw()
         self.player_left.draw()
         self.player_right.draw()
         self.ball.draw(self.player_left.x, self.player_left.y, self.player_left.width, self.player_right.x, self.player_right.y)
-        self.compteur.draw()
         self.background.draw()
         
     
@@ -53,8 +53,8 @@ class Jeu:
         """teste si un joueur gagne un point et l'attribue"""
         test = self.ball.point()
         if test == 1 :
-            self.compteur.point_droite += 1
-        elif test == -1:
             self.compteur.point_gauche += 1
+        elif test == -1:
+            self.compteur.point_droite += 1
 
     

@@ -15,9 +15,9 @@ class Player1:
     def move(self)  -> None:
         """la fonction qui capte le déplacement"""
         if pyxel.btn(pyxel.KEY_Z) and self.y > 0:
-            self.y -= 3
+            self.y -= 5
         if pyxel.btn(pyxel.KEY_S) and self.y + self.height < pyxel.height:
-            self.y += 3
+            self.y += 5
 
 
     def draw(self)  -> None:

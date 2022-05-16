@@ -36,10 +36,14 @@ class Ball:
             if self.y <= joueur1_y + pyxel.height / 6 and self.y >= joueur1_y - self.radius:
                 self.vitesse_verticale_colision(joueur1_y)
                 self.vitesse_horizontale_colision()
+                self.vitesse_x = self.vitesse_x * 1.5
+                self.vitesse_y = self.vitesse_y * 1.5
         elif (self.x + self.radius) >= joueur2_x :
             if self.y <= joueur2_y + pyxel.height / 6 and self.y >= joueur2_y - self.radius:
                 self.vitesse_verticale_colision(joueur2_y)
                 self.vitesse_horizontale_colision()
+                self.vitesse_x = self.vitesse_x * 1.5
+                self.vitesse_y = self.vitesse_y * 1.5
 
 
     def vitesse_verticale_colision(self, joueur_y) -> None:
@@ -71,8 +75,8 @@ class Ball:
     def reset_position_point(self) -> None:
         """remet la balle au centre si un joueur a un point"""
         self.x = pyxel.width/2
-        self.vitesse_x = (self.vitesse_x * -1) +1
-        self.vitesse_y = (self.vitesse_y * -1 ) / 5
+        self.vitesse_x = (self.vitesse_x * -1) / self.vitesse_x
+        self.vitesse_y = random.randint(1, 5)
 
 
     def debug_activation(self) -> None:
